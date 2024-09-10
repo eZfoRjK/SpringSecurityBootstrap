@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New User</title>
+</head>
+<body>
+
+<form method="GET" action="/logout">
+    <input type="submit" value="LOGOUT" />
+</form>
+
+<br/><br/>
+
+<form method="POST" action="/admin/new">
+    <label for="name">First Name:</label>
+    <input type="text" name="name" id="name"/>
+
+    <br/><br/>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" id="lastName"/>
+
+    <br/><br/>
+
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age"/>
+
+    <br/><br/>
+
+    <label for="login">Login:</label>
+    <input type="text" name="login" id="login"/>
+
+    <br/><br/>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password"/>
+
+    <br/><br/>
+
+    <label for="roles">Roles:</label>
+    <select id="roles" name="roles" multiple>
+        <option value="1">Admin</option>
+        <option value="2">User</option>
+    </select>
+
+    <br/><br/>
+
+    <input type="submit" value="Add User"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change user`s data</title>
+</head>
+
+<body>
+<br/>
+<br/>
+<form th:method = "PATCH" th:action = "@{/admin/change?id={id}(id=${user.getId()})}" th:object="${user}">
+    <label for="name"> Enter first name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
+    <br/>
+    <label for="lastName"> Enter last name: </label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <br/>
+    <br/>
+    <label for="age"> Enter age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <br/>
+    <br/>
+    <label for="login"> Enter login: </label>
+    <input type="text" th:field="*{login}" id="login"/>
+    <br/>
+    <br/>
+    <label for="password"> Enter password: </label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <br/>
+    <br/>
+    <label for="roleSelect">Enter role:</label>
+    <select id="roleSelect" name="roleSelectedID" multiple>
+        <option th:each="role : ${modelRole}"
+                th:value="${role.id}"
+                th:text="${role.role}">
+
+        </option>
+    </select>
+    <br/>
+    <br/>
+    <input type="submit" value="Add"/>
+
+</form>
+</body>
+</html>
